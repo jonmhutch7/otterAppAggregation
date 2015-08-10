@@ -1,0 +1,160 @@
+.compare {
+  .comparison-holder {
+    position: fixed;
+    width: ~'calc(100% - 250px)';
+    height: 100%;
+    padding: 20px;
+    @media @640 {
+      width: 100%;
+      height: ~'calc(100% - 78px)';
+      overflow: scroll;
+      padding: 15px;
+    }
+  }
+  .view-interior[data-sections="1"]{
+    .appHolder {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .view-interior[data-sections="2"]{
+    .appHolder {
+      width: 50%;
+      height: 100%;
+      @media @940port {
+        width: 100%;
+        height: 50%;
+      }
+    }
+  }
+  .view-interior[data-sections="3"]{
+    .appHolder {
+      width: 50%;
+      height: 50%;
+    }
+  }
+  .view-interior[data-sections="4"]{
+    .appHolder {
+      width: 50%;
+      height: 50%;
+    }
+  }
+  .view-interior[data-sections="5"]{
+    .appHolder {
+      width: 33%;
+      height: 50%;
+      @media @940 {
+        width: 50%;
+        height: 33%;
+      }
+    }
+  }
+  .view-interior[data-sections="6"]{
+    .appHolder {
+      width: 33%;
+      height: 50%;
+      @media @940 {
+        width: 50%;
+        height: 33%;
+      }
+    }
+  }
+  .appHolder {
+    height: 100%;
+    width: 50%;
+    position: relative;
+    display: block;
+    float: left;
+    margin: 0;
+    opacity: 1;
+    .transition(opacity 300ms);
+    @media @600 {
+      width: 50%;
+      height: 33%;
+      min-height: 150px;
+    }
+    &.hidden {
+      opacity: 0;
+    }
+    #chart {
+      position: absolute;
+      width: 100%;
+      height: ~'calc(100% - 95px)';
+      @media @640 {
+        height: ~'calc(100% - 30px)';
+        margin-top: -28px;
+      }
+      @media @600land {
+        display: none;
+      }
+    }
+    .mobile-graph {
+      position: relative;
+      display: flex;
+      align-items: center;
+      height: ~'calc(100% - 60px)';
+      margin-bottom: 15px;
+      .circle {
+        width: 90px;
+        height: 90px;
+        display: block;
+        position: relative;
+        border-radius: 50%;
+        margin: 0 auto;
+        vertical-align: middle;
+        display: block;
+        border: 2px solid;
+        &[data-rating="undefined"] {
+          //background-color: ;
+        }
+        &[data-rating="0"] {
+          background-color: #e76a2a;
+          border-color: darken(#e76a2a, 10%);
+        }
+        &[data-rating="0.5"] {
+          background-color: #e76a2a;
+          border-color: darken(#e76a2a, 10%);
+        }
+        &[data-rating="1"] {
+          background-color: #E76A2A;
+          border-color: darken(#E76A2A, 10%);
+        } 
+        &[data-rating="1.5"] {
+          background-color: #E9812C;
+          border-color: darken(#E9812C, 10%);
+        }
+        &[data-rating="2"] {
+          background-color: #ECA52F;
+          border-color: darken(#ECA52F, 10%);
+        }
+        &[data-rating="2.5"] {
+          background-color: #EFC231;
+          border-color: darken(#EFC231, 10%);
+        }
+        &[data-rating="3"] {
+          background-color: #F1DF33;
+          border-color: darken(#F1DF33, 10%);
+        }
+        &[data-rating="3.5"] {
+          background-color: #CAD647;
+          border-color: darken(#CAD647, 10%);
+        }
+        &[data-rating="4"] {
+          background-color: #A3CE5A;
+          border-color: darken(#A3CE5A, 10%);
+        }
+        &[data-rating="4.5"] {
+          background-color: #7CC56E;
+          border-color: darken(#7CC56E, 10%);
+        }
+        &[data-rating="5"] {
+          background-color: #55bc81;
+          border-color: darken(#55bc81, 10%);
+        }
+      }
+      &.hidden {
+        display: none;
+      }
+    }
+  }
+}

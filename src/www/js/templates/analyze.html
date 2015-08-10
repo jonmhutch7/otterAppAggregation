@@ -1,0 +1,44 @@
+<div class="appHolder">
+  <div class="appInfo">
+    <h2 class="title">{items.name}</h2>
+    <div class="stars" data-rating="{items.ratingAverageAll}">
+      <p class="no-rating">This app has not been reviewed.</p>
+      <span class="star1"></span>
+      <span class="star2"></span>
+      <span class="star3"></span>
+      <span class="star4"></span>
+      <span class="star5"></span>
+    </div>
+    <div class="app-logo">
+      <img src="{items.image}">
+      <span>{items.country}</span>
+    </div>
+  </div>
+</div>
+
+<section>
+    <div id="chart" class="chart"></div>
+    <div class="review-header">
+      <span class="review-count"></span>
+      <span style="display: none;" class="clear-filter">
+        Remove Filter
+      </span>
+    </div>
+    <div id="reviews">
+      {#items.reviews}
+        <div class="reviewContainer">
+          <h2>{title.label}</h2>
+          <span class="version">Version: {version.label}</span>
+          <div class="stars" data-rating="{rating.label}">
+            <p class="no-rating">This app has not been reviewed.</p>
+            <span class="star1"></span>
+            <span class="star2"></span>
+            <span class="star3"></span>
+            <span class="star4"></span>
+            <span class="star5"></span>
+          </div>
+          <p class="reviewBody">{content.label}</p>
+        </div>
+      {/items.reviews}
+    </div>
+</section>

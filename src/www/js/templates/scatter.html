@@ -1,0 +1,45 @@
+<div id="scatterSection" >
+  <div id="chartKey">
+    <h2>iOS Applications by <span id="selectedCompany"></span></h2>
+    <div id="slider"></div>
+    <div id="play">Play<div id="arrow"></div></div>
+    <div id="sliderKey">
+      <div class="slider-key" id="sliderKey1">All Reviews</div>
+      <div class="slider-key" id="sliderKey2">Last 100 Reviews</div>
+      <div class="slider-key" id="sliderKey3">Last 50 Reviews</div>
+    </div>
+  </div>
+  <div id="chartHolder" class="hidden">
+  </div>
+</div>
+
+<div id="scatter-mobile">
+  <div class="criteria">
+    <span class="active" data-criteria="all">All</span>
+    <span data-criteria="100">Last 100</span>
+    <span data-criteria="50">Last 50</span>
+  </div>
+  <div class="list-header">
+    <span class="app">App</span>
+    <span class="average">Average Rating</span>
+    <span class="popularity">Popularity <small>(Ratings/Day)</small></span>
+  </div>
+  <ul class="all">
+    {#items}
+    <li>
+      <div class="company">
+        <img src="{image}">
+        <span>{name}</span>
+      </div>
+      <div class="ratings">
+        <span class="avg-all">{ratingAverageAll|numFormat}</span>
+        <span class="avg-50">{ratingAverage50|numFormat}</span>
+        <span class="avg-100">{ratingAverage100|numFormat}</span>
+      </div>
+      <div class="velocity">
+        {velocityAll|numFormat}
+      </div>
+    </li>
+    {/items}
+  </ul>
+</div>

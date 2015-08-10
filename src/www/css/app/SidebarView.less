@@ -1,0 +1,609 @@
+#sidebar {
+ position: absolute;
+  top: 0;
+  right: auto;
+  bottom: 0;
+    left: 0;
+  width: 256px;
+  height: auto;
+  overflow: hidden;
+  z-index: 1;
+  background-color: @background;
+  @media @640 {
+    &.index {  
+      z-index: 9999;
+    }
+    width: 100%;
+    height: 100%;
+    background: none;
+  }
+  .search-container .compare-error {
+    border: 1px solid #f5aca6;
+  }
+  .search-btn {
+    display: none;
+    @media @640 {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 44px;
+      height: 44px;
+      background:url('/assets/img/search.png') no-repeat;
+      background-size: 50%;
+      background-position: center center;
+      cursor:pointer;
+    }
+  }
+  /* --- Social and help buttons --- */
+  .circle-buttons {
+    padding: 15px;
+    overflow: auto;
+    overflow-x: hidden;
+    @media @640 {
+      float: right;
+      padding: 0;
+    }
+    #shares {
+      float: right;
+      .share {
+        width:30px;
+        height:30px;
+        cursor:pointer;
+        .border-radius(50%);
+        text-indent: 9999px;
+        background-size: 16px;
+        background-repeat: no-repeat;
+        background-position: center;
+        display: inline-block;
+        &.twitter {
+          background-color: @twitter;
+          margin-right: 5px;
+          background-image:url('/assets/img/twitter.png');
+        }
+        &.facebook {
+          background-color: @facebook;
+          background-image: url('/assets/img/facebook.png');
+        }
+      }
+      @media @640 {
+        display: none;
+      }
+    }
+    #helpButton {
+      width:30px;
+      height:30px;
+      cursor:pointer;
+      .border-radius(50%);
+      background-color: @green;
+      text-indent: 9999px;
+      float: left;
+      position: relative;
+      &:after {
+        display: block;
+        content: '?';
+        text-indent: 0;
+        color: #fff;
+        font-size: 19px;
+        text-align: center;
+        line-height: 30px;
+        top: 0;
+        position: absolute;
+        width: 30px;
+        height: 30px;
+        @media @640 {
+          width: 44px;
+          height: 44px;
+          font-size: 24px;
+          line-height: 44px;
+        }
+      }
+      @media @640 {
+        width: 44px;
+        height: 44px;
+        background: none;
+      }
+    }
+  }
+  /* --- Logo --- */
+  #logo {
+    background-image:url('/assets/img/Otter_Logo.png');
+    height: 35px;
+    background-repeat: no-repeat;
+    background-size: 70px;
+    background-position: center;
+    @media @640 {
+      background-image:url('/assets/img/otter_white.png');
+      height: 41px;
+    }
+    h1 {
+      text-indent: 9999px;
+    }
+  }
+  .mobile-dropdown {
+    display: block;
+    position: relative;
+    height: ~'calc(100% - 157px)';
+    @media @640 {
+      display: none;
+      background-color: #009E7E;
+      padding: 15px;
+      position: absolute;
+      top: 44px;
+      width: 100%;
+      height: auto;
+      max-height: ~'calc(100% - 100px)';
+      overflow-y: scroll;      
+      box-shadow: 0px 10px 30px -5px #444;
+    }
+  }
+  /* ---- State Selector --- */
+  #stateSelector {
+    width: 180px;
+    margin: 20px auto;
+    @media @640 {
+      width: 100%;
+      position: absolute;
+      bottom: 0;
+      margin: 0;
+    }
+    .stateSelectorToggle {
+      text-indent: 9999px;
+      height:22px;
+      width:55px;
+      display: inline-block;
+      text-align:center;
+      background-color: #bdbdbd;
+      cursor:pointer;
+      .transition(background-color 300ms);
+      &.active {
+        background-color: @green;
+      }
+      &:hover {
+        background-color: @green;
+      }
+      @media @640 {
+        text-indent: 0;
+        width: 33.3%;
+        float: none;
+        display: inline-block;
+        background-image: none;
+        height: 34px;
+        margin: 0;
+        color: #fff;
+        font-size: 14px;
+        line-height: 34px;
+        letter-spacing: 2px;
+      }
+    } 
+  }
+
+  /* --- Add Apps Section --- */
+  #addApps {
+    z-index: 91;
+    padding: 0 20px;
+    position: relative;
+    height: ~'calc(100% - 308px)';
+    display: block;
+    overflow: hidden;
+    &.singleBubbleLengthener {
+      height: ~"calc(100% - 140px) !important";
+       @media @640 {
+        height:54px !important;
+       }
+    }
+    @media @640 {
+      display: inline-block;
+      width: 100%;
+      padding: 0;
+      min-height: 0px;
+      z-index: 9999;
+    }
+    h3 {
+      span {
+        display: block;
+        font-size: 13px;
+        margin-bottom: 10px;
+      }
+      @media @640 {
+        display: none;
+      }
+    }
+  }
+
+  /* --- Menu Holder and General Styling --- */
+  #comparisonHolder {
+    position:fixed;
+    width: ~"calc(100% - 240px)";
+    height: ~"calc(100% - 32px)";
+    left:240px;
+    top:0px;
+    z-index:100;
+    padding:18px;
+    @media @640 {
+      position: relative;
+      width: 100%;
+      height: 270px;
+      left: 0;
+      z-index: 100;
+      padding: 0;
+      background: white;
+      border-bottom: 1px solid #f0efef;
+    }
+    @media @640land {
+      width: 50%;
+      height: 250px;
+      border-bottom: none;
+    }
+  }
+
+  #comparisonMenu {
+    position:fixed;
+    width:180px;
+    left:0;
+    top:0;
+    z-index:9998;
+    height: 100%;
+    background:#f0efef;
+    padding:0px 30px;
+    h1 {
+      color:#474747;
+      margin-bottom:8px;
+      margin-top:18px;
+      font-size:10px;
+      font-weight:500;
+      text-transform:uppercase;
+      @media @640 {
+        display:none;
+      }
+    }
+    h2 {
+      color:#404040;
+      font-size:12px;
+      float:left;
+      line-height:22px;
+    }
+    @media @640 {
+      position: relative;
+      width: 100%;
+      z-index: 9999;
+      height: 54px;
+      padding: 0;
+    }
+  }
+
+
+
+  #state1 {
+    background-image:url('/assets/img/select_single.png');
+    background-repeat:no-repeat;
+    background-position:12px 2px;
+    margin-right:7px;
+  }
+
+  #state2 {
+    background-image:url('/assets/img/select_multiple.png');
+    background-repeat:no-repeat;
+    background-position:12px 1px;
+    margin-right:7px;
+  }
+
+  #state3 {
+    background-image:url('/assets/img/select_scatter.png');
+    background-repeat:no-repeat;
+    background-position:12px 1px;
+  }
+
+  #search1 {
+    @media @640 {
+      padding: 12px 10px 0 10px;
+    }
+  }
+
+  .scatterLengthener {
+    height: ~"calc(100% - 180px) !important";
+  }
+
+  
+
+  .comparisonVars {
+    display:block;
+    @media @640 {
+      width: 100%;
+    }
+  }
+  select {
+    background: white;
+    height: 31px;
+    color: #6f6f6f;
+    font-size: 11px;
+    border: 0;
+    border-radius: 0;
+    cursor: pointer;
+    text-indent: 5px;
+    width: 100%;
+    margin-bottom: 10px;
+    &:focus {
+      outline:none;
+    }
+    &:last-child {
+      margin-bottom: 0px;
+    }
+  }
+
+  /* --- App Selector --- */
+  input[type=text]#comparisonSearch {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 12px;
+    color: #6f6f6f;
+    width: ~"calc(100% - 31px)";
+    height: 31px;
+    padding: 0 10px;
+    border: 0;
+    &:focus {
+      outline:none;
+    }
+    @media @640 {
+      margin: 0;
+      width: 100%;
+
+    }
+  }
+
+  #comparisonButton {
+    display:inline;
+    cursor:pointer;
+    width:31px;
+    height:31px;
+    float:right;
+    background:#39b992;
+    background-image:url('/assets/img/search.png');
+    background-repeat:no-repeat;
+    background-position:9px 8px;
+    background-size:46%;
+    cursor:pointer;
+    @media @640 {
+      display: none;
+    }
+  }
+
+  #comparisonSearchField {
+    z-index: 110;
+    overflow: hidden;
+    overflow-y: scroll;
+    max-height: ~'calc(100% - 96px)';
+    position: relative;
+    margin-top: 1px;
+    @media @640 {
+      min-height: 0px;
+      max-height: 130px;
+      height: auto;
+      width: 100%;
+    }
+  }
+
+  .comparisonSelector {
+    background: white;
+    font-size: 10px;
+    border-bottom: 1px solid #EFEFEF;
+    height: 40px;
+    cursor: pointer;
+    opacity: 0.5;
+    position: relative;
+    &.no-results {
+      line-height: 40px;
+      padding-left: 15px;
+    }
+    &.active {
+      opacity: 1;
+    }
+    @media @640 {
+    }
+  }
+
+  .comparisonSelectorLogo {
+    height: 14px;
+    width: 14px;
+    margin: 0 10px;
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  .selection, .appName {
+    width: 80%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 40px;
+    vertical-align: middle;
+    display: inline-block;
+  }
+
+  .selection {
+    width:140px;
+    max-width:140px;
+    padding-left: 10px;
+  }
+
+  .appName {
+    width:120px;
+    max-width:120px;
+    @media @640 {
+      width: ~"calc(100% - 60px)";
+      max-width: 240px;
+    }
+  }
+
+  .addItem {
+    font-size: 10px;
+    font-weight: 900;
+    position: absolute;
+    right: 10px;
+    top: 0;
+    line-height: 40px;
+    z-index: 9999;
+    height: 30px;
+  }
+
+  .comparisonDim {
+    cursor:default;
+    background:#f8f7f7;
+    img, div {
+      opacity:.3;
+      -moz-opacity:.3;
+    }
+  }
+
+  .comparisonSelector .itemAdded {
+    cursor:default;
+    color:#f8f7f7 !important;
+    background:none;
+  }
+
+  .comparisonSelector:hover .addItem {
+    color:#39b992;
+  }
+
+  /* --- Selected Apps Section --- */
+
+  #selectedApps {
+    position: absolute;
+    padding: 0 20px;
+    width: 100%;
+    bottom: 20px;
+    @media @640 {
+      padding: 0;
+      margin-top: 30px;
+      position: relative;
+      bottom: 0;
+    }
+  }
+
+  #selectedItems {
+    height: 210px;
+    margin-top: 6px;
+    overflow: hidden;
+    margin-bottom: 15px;
+    .comparedAppItem {
+      font-size:12px;
+      font-weight:400;
+      line-height: 34px;
+      margin-bottom:1px;
+      background:#fff;
+      height: 34px;
+      position: relative;
+      @media @640 {
+      }
+      p {
+        display:inline;
+      }
+      &.itemInactive {
+        background:#f8f7f7;
+        img, div {
+          opacity:.3;
+          -moz-opacity:.3;
+        }
+        .itemDrag {
+          cursor:default;
+        } 
+      }
+      .comparedAppName {
+        width: 80%;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        line-height: 34px;
+        vertical-align: middle;
+        display: inline-block;
+        padding-left: 10px;
+      }
+      // .itemDrag {
+      //   display: inline-block;
+      //   margin: 0 8px;
+      //   cursor: move;
+      //   background-image: url('/assets/img/Move_Passive.png');
+      //   background-repeat: no-repeat;
+      //   background-position: center;
+      //   width: 10px;
+      //   height: 34px;
+      //   vertical-align: middle;
+      // }
+      .addItem {
+        color:gray;
+        font-size:10px;
+        float:right;
+        border:none;
+        padding:3px 6px 4px 6px;
+        margin-top:-3px;
+        cursor:pointer;
+        margin-right:4px;
+      }
+
+      .deleteItem {
+        background-image: url('/assets/img/X_1.png');
+        background-repeat: no-repeat;
+        background-size: 7px;
+        background-position: center;
+        width: 30px;
+        height: 34px;
+        cursor: pointer;
+        display: inline-block;
+        position: absolute;
+        right: 0;
+        &:hover {
+          background-image:url('/assets/img/X_2.png');
+        }
+      }
+    }
+  }
+
+  #comparisonMenuTitle2 {
+    margin-bottom: 10px;
+    font-size: 12px;
+    @media @640 {
+      color: white;
+      font-size: 12px;
+      margin-bottom: 10px;
+      display: block;
+    }
+    #clearAll {
+      text-transform:none;
+      float:right;
+      color: #39b992;
+      font-weight:500;
+      font-size:10px;
+      margin-top:0;
+      cursor:pointer;
+      @media @640 {
+        color: #fff;
+        font-size: 12px;
+      }
+    }
+  }
+  .loading {
+    float: right;
+    padding-right: 10px;
+    padding-top: 11px;
+  }
+
+  #generateComparison {
+    padding:12px;
+    background:@green;
+    color: @white;
+    font-size:10px;
+    font-weight:800;
+    text-align:center;
+    cursor:pointer;
+    letter-spacing: 1px;
+    @media @640 {
+      margin: 0 auto;
+      display: block;
+      width: 50%;
+    }
+  }
+
+  p.comparisonSelector.searching {
+    line-height: 40px;
+    padding-left: 10px;
+  }
+}

@@ -1,0 +1,175 @@
+.view.scatter {
+  #scatterSection {
+    @media (min-width: 641px) and (max-width: 856px) {
+      display: none;
+    }
+    @media @600 {
+      display: none;
+    } 
+    span#selectedCompany {
+      text-transform: capitalize;
+    }
+    #chartHolder {
+      opacity: 1;
+      .transition(opacity 300ms);
+      &.hidden {
+        opacity: 0;
+      }
+    }
+  }
+  #scatter-mobile {
+    display: none;
+    position: absolute;
+    width: 100%;
+    overflow: hidden;
+    height: 100%;
+    @media (min-width: 641px) and (max-width: 856px) {
+      display: block;
+    }
+    @media @600 {
+      display: block;
+    }
+    .criteria {
+      height: 54px;
+      width: 100%;
+      padding: 10px 25px;
+      span {
+        width: 33%;
+        display: inline-block;
+        line-height: 34px;
+        background-color: #ddd;
+        text-align: center;
+        color: #999;
+        font-size: 14px;
+        font-weight: 500;
+        letter-spacing: 1px;
+        .transition(background-color 300ms);
+        &:first-child {
+          border-right: 1px solid #ccc;
+          border-radius: 5px 0 0 5px;
+        }
+        &:last-child {
+          border-left: 1px solid #ccc;
+          border-radius: 0 5px 5px 0;
+        }
+        &.active {
+          background-color: @green;
+          color: #fff;
+        }
+        &:hover {
+          background-color: @green;
+          color: #fff;
+        }
+      }
+    }
+    .list-header {
+      padding: 10px 15px;
+      border-bottom: 1px solid #efefef;
+      span {
+        display: inline-block;
+        line-height: 14px;
+        font-weight: bold;
+        color: #9B9B9B;
+        vertical-align: middle;
+        &.app {
+          width: 50%;
+        }
+        &.average,
+        &.popularity {
+          width: 25%;
+          text-align: right;
+        }
+        &.average {
+          padding-right: 10px;
+        }
+        &.popularity small{
+          font-weight: 100;
+          font-size: 11px;
+        }
+      }
+    }
+    ul {
+      background: #fff;
+      position: absolute;
+      width: 100%;
+      overflow: scroll;
+      height: ~'calc(100% - 103px)';
+      li {
+        height: 74px;
+        border-bottom: 1px solid #efefef;
+        padding: 15px;
+        position: relative;
+        color: #9B9B9B;
+        > div {
+          display: inline-block;
+          height: 100%;
+          vertical-align: middle;
+          line-height: 43px;
+        }
+        .company {
+          width: 50%;
+          img {
+            height: 100%;
+            display: inline-block;
+            margin-right: 10px;
+            vertical-align: middle;
+            border-radius: 8px;
+          }
+          span {
+            display: inline-block;
+            width: ~'calc(100% - 60px)';
+            vertical-align: middle;
+            line-height: 14px;
+          }
+        }
+        .ratings,
+        .velocity {
+          width: 25%;
+          font-size: 18px;
+          font-weight: bold;
+          padding-left: 5px;
+          text-align: right;
+          span {
+            line-height: 43px;
+          }
+        }
+        .ratings {
+          padding-right: 10px;
+        }
+      }
+      &.all {
+        li .ratings {
+          .avg-all {
+            display: block;
+          }
+          .avg-50,
+          .avg-100 {
+            display: none;
+          }
+        }
+      }
+      &.hundred {
+        li .ratings {
+          .avg-100 {
+            display: block;
+          }
+          .avg-50,
+          .avg-all {
+            display: none;
+          }
+        }
+      }
+      &.fifty {
+        li .ratings {
+          .avg-50 {
+            display: block;
+          }
+          .avg-all,
+          .avg-100 {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,345 @@
+/* --- Bubbles --- */
+circle {
+  &.node {
+    fill: lightgray;
+    fill-opacity:.8;
+    stroke-width:0;
+  }
+  &.border {
+    stroke-width:3px;
+    stroke-opacity:1;
+  }
+}
+
+.clickBorder circle {
+  stroke-width:2.5px;
+  stroke:#00948c !important;
+  stroke-opacity:1;
+}
+
+.nodeText {
+    fill:#3a3a3a;
+    font-family: 'Helvetica Neue', 'Gotham Medium', sans-serif;
+    font-size: 12px;
+    text-anchor:middle;
+    word-wrap:break-word;
+}
+
+/* --- Otter Chart --- */
+
+
+.appHolder {
+  width: 58%;
+  margin-bottom: 15px;
+  position: absolute;
+}
+
+.appTitle {
+  color:#4b4b4b;
+  margin-top:14px;
+  font-size:18px;
+  font-weight:200;
+  color:#6f6f6f;
+}
+
+.appLogoLarge {
+  img {
+    width:24px;
+    height:24px;
+    margin-top:4px;
+    float:left;
+  }
+  h2 {
+    float:left;
+    font-size:11px;
+    text-transform:uppercase;
+    margin-left:8px;
+    font-weight:600;
+    margin-top:10px;
+  }
+  @media @640 {
+    display:none;
+  }
+}
+
+.removeFromChart {
+  text-decoration:underline;
+  cursor:pointer;
+}
+
+.chart svg{
+ overflow: visible;
+ margin: 0 auto;
+ display: block;
+}
+
+
+/* --- Tooltip --- */
+
+
+.d3-tip, .d3-tip2 {
+  position:static;
+  z-index:9999;
+  line-height: 1;
+  font-weight: bold;
+  padding: 14px;
+  background: white;
+  border:1px solid #d6d6d6;
+  border-radius: 5px;
+}
+
+.tipText {
+  margin-top:2px;
+  font-size:10px;
+  font-weight:600;
+  color:#6f6f6f;
+  width:70px;
+}
+
+.tipText1 {
+  margin-top:8px;
+}
+
+.tipHeavy {
+  font-weight:900;
+  float:right;
+  font-size:12px;
+}
+
+/* --- Scatter Section --- */
+
+/* --- Chart Key --- */
+
+#chartKey {
+  width: 50%;
+  padding: 20px;
+  color: #6f6f6f;
+  h2 {
+    font-size: 18px;
+    font-weight: 300;
+    margin-top:8px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+#reviewSelector {
+  margin-top:12px;
+  font-size:10px;
+  input {
+    margin-left:24px;
+    margin-right:6px;
+    &:first-child {
+      margin-left:0px;
+    }
+  }
+}
+
+#chartHolder {
+  width: 100%;
+  height: ~'calc(100% - 115px)';
+  display: block;
+  position: absolute;
+  circle {
+    stroke:none;
+    &.border {
+      stroke-width:2px;
+      stroke:#00948c;
+      stroke-opacity:1;
+    }
+    &.circleFrame {
+      fill:none;
+      stroke-width:3px;
+      stroke-opacity:2;
+    }
+    &.historicalCircle {
+      stroke-width:1px;
+      stroke:white;
+      stroke-opacity:.7;
+    }
+  }
+  text {
+    text-anchor:middle;
+  }
+  .axis {
+    path,
+    line {
+        fill: none;
+        stroke: #b9b6a5;
+        stroke-width:2px;
+        shape-rendering: crispEdges;
+    }
+    text {
+      font-family: sans-serif;
+      font-size: 11px;
+      fill: #b9b6a5;
+    }
+  }
+  .axisLabel {
+    font-size:12px;
+    fill: #b9b6a5;
+    text-anchor:start;
+  }
+  #xAxis g:nth-child(5) {
+    display:none;
+  }
+  .scoreText {
+    font-size:14px;
+    fill:white;
+    font-weight:800;
+  }
+  .historicalText {
+    font-size:0px;
+    fill:black;
+    font-weight:400;
+  }
+  .historicalLine {
+    stroke:#d6d6d6;
+    stroke-width:1px;
+  }
+  .slideTrail {
+    fill:gray;
+  }
+}
+
+.scatterTip {
+  z-index:9999;
+  line-height: 1;
+  font-weight: bold;
+  padding: 14px;
+  background-color:rgba(255, 255, 255, 0.95);
+  border:1px solid #d6d6d6;
+  border-radius: 5px;
+  width:180px;
+  .appTitle {
+    color:#4b4b4b;
+    font-size:14px;
+    font-weight:400;
+    line-height: 16px;
+    margin:0;
+    color:#6f6f6f;
+    padding-bottom:8px;
+    border-bottom:1px solid #d6d6d6;
+  }
+  .tipText {
+    margin-top:6px;
+    font-size:12px;
+    font-weight:400;
+    color:#6f6f6f;
+    width: 100%;
+  }
+  .tipText1 {
+    margin-top:8px;
+  }
+  .tipHeavy {
+    font-weight:900;
+    float:right;
+    font-size:12px;
+  }
+}
+
+#slider {
+  display: inline-block;
+  width: ~'calc(100% - 65px)';
+  margin: 15px 5px;
+  cursor: pointer;
+  vertical-align: middle;
+}
+
+#play {
+  display: inline-block;
+  margin-left: 10px;
+  cursor: pointer;
+  font-size: 10px;
+  vertical-align: middle;
+  height: 35px;
+  line-height: 35px;
+  &:hover {
+    color:#39b992;
+  }
+}
+
+#arrow {
+  display: inline-block;
+  width: 12px;
+  height: 9px;
+  margin-left: 6px;
+  background-image: url('/assets/img/arrow_passive.png');
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+#play
+
+#play:hover #arrow {
+  background-image:url('/assets/img/arrow_active.png');
+}
+
+#sliderKey {
+  width: ~'calc(100% - 60px)';
+  font-size: 10px;
+  .slider-key {
+    width: 33%;
+    display: inline-block;
+  }
+}
+
+#sliderKey2 {
+  text-align:center;
+}
+
+#sliderKey3 {
+  text-align:right;
+}
+
+.ui-widget-content {
+  background: #dedede;
+}
+
+.ui-slider {
+  position: relative;
+  text-align: left;
+  .ui-slider-handle {
+    position: absolute;
+    z-index: 2;
+    width: 14px;
+    height: 14px;
+    margin-top:1px;
+    cursor: pointer;
+  }
+  .ui-slider-range {
+    position: absolute;
+    z-index: 1;
+    display: block;
+    border: 0;
+  }
+}
+
+  /* For IE8 - See #6727 */
+  .ui-slider.ui-state-disabled .ui-slider-handle,
+  .ui-slider.ui-state-disabled .ui-slider-range {
+    filter: inherit;
+  }
+
+.ui-slider-horizontal {
+  height: 6px;
+  .ui-slider-handle {
+    top: -5px;
+    margin-left: -6px;
+  }
+  .ui-slider-range {
+    top: 0;
+    height: 100%;
+  }
+}
+
+/* Interaction states
+----------------------------------*/
+.ui-state-default {
+  background: #39b892;
+}
+
+.ui-slider-handle:focus {
+  outline:none;
+}

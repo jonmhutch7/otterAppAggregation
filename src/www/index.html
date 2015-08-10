@@ -1,0 +1,82 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Otter - iOS App Performance Visualizer by Mutual Mobile</title>
+    <meta http-equiv="content-type" content="text/html charset=utf-8"/>
+    <meta property="og:image" content="http://otter.mutualmobile.com/img/Otter_Screenshot.png">
+    <meta name="description" content="Visualize reviews from the iOS App Store.">
+    <meta name="mobileoptimized" content="0" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta content='initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0' name='viewport' />
+    <link rel="icon" type="image/png" href="http://www.mutualmobile.com/wp-content/themes/base/img/fav/favicon.ico">
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="author" content="Mutual Mobile" />
+
+    <!-- @exclude -->
+    <link rel="stylesheet/less" type="text/css" href="css/app/app.less" />
+    <!-- @endexclude -->
+    <!-- @echo css -->
+
+  </head>
+  <body>
+    <!--Customize this area with your application's code-->
+    <section id="sidebar"></section>
+    <div id="view-root">
+        <div id="error-msg"></div>
+    </div>
+    <div class="load-container">
+        <div class="loader"></div>
+    </div>
+    <div class="help-popup" style="display: none;">
+      <div id="helpText">
+        <span class="popup-close"><img src="assets/img/close.png"></span>
+        <div id="otterHead"><img src="assets/img/Otter_Head.png"></div>
+        <h2>What is Otter?</h2>
+        <p>Otter is a visual tool to quickly analyze iOS applications through data from the iOS App Store.</p>
+        <p>At a glance:</p>
+        <ul>
+          <li>Analyze user sentiment using data from the last 100 user reviews.</li>
+          <li>Compare sentiment across multiple applications simulatenously.</li>
+          <li>Compare applications by sentiment and popularity.</li>
+          <li>The most commonly used words are represented as circles - size corresponds to frequency and color to sentiment. The larger a circle, the more commonly used the word. The greener the circle, the better a word's sentiment.</li>
+        </ul>
+        <p>This is a working prototype and has limited support for non-US applications.</p>
+        <p>We'd love to hear your <a href="mailto:otter@mutualmobile.com" target="_blank">thoughts and feedback</a>.</p>
+        <div id="helpFooter">
+        <div id="otterLogo"><img src="assets/img/Otter_Logo.png"></div>
+          <p>Otter is © 2014 by <a href="http://www.mutualmobile.com" target="_blank">Mutual Mobile Inc.</a> All Rights Reserved.</p>
+          <p><a href="http://www.mutualmobile.com/privacy-policy" target="_blank">PRIVACY POLICY</a> · <a href="mailto:otter@mutualmobile.com" target="_blank">HAVE FEEDBACK?</a></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- less -->
+    <!-- @exclude -->
+    <script>
+        var less=less||{};
+        less.env='development';
+    </script>
+    <script src="components/less.js/dist/less-1.4.2.js"></script>
+    <!-- @endexclude -->
+
+    <!-- config -->
+    <!-- @exclude -->
+    <script type="text/x-config" data-name="local" data-src="configs/local.json" data-default></script>
+    <!-- @endexclude -->
+    <!-- @echo config -->
+
+    <!-- translations -->
+    <script type="text/x-translation" data-name="en_US" data-src="messages/en_US.json" data-default></script>
+    <script type="text/x-translation" data-name="es_MX" data-src="messages/es_MX.json"></script>
+
+    <!-- js -->
+    <!-- @exclude -->
+    <script data-main="js/app/boot.js" src="components/requirejs/require.js"></script>
+    <!-- @endexclude -->
+    <!-- @echo js -->
+
+  </body>
+</html>

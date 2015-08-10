@@ -1,0 +1,77 @@
+
+
+<div class="circle-buttons">
+  <div id="helpButton">Help</div>
+  <div id="shares">
+    <div class="share twitter">Twitter</div>
+    <div class="share facebook">Facebook</div>
+  </div>
+</div>
+
+<div class="search-btn"></div>
+
+<div id="logo">
+    <h1>
+      Otter
+    </h1>
+</div>
+
+<div id="stateSelector">
+  <div id="state1" data-state="Analyze" class="stateSelectorToggle">Analyze</div>
+  <div id="state2" data-state="Compare" class="stateSelectorToggle"> Compare</div>
+  <div id="state3" data-state="Scatter" class="stateSelectorToggle">Trends</div>
+</div>
+
+<div class="mobile-dropdown">
+  <div id="addApps">
+    <h3>
+      <span id="sectionOneTitle1" class="state1">Analyze Individual App</span>
+      <span id="sectionOneTitle2" class="state2">Compare Multiple Apps</span>
+      <span id="sectionOneTitle3" class="state3">Generate Scatter Plot</span>
+    </h3>
+    <form class="search-field">
+
+      <select id="countrySelector" class="comparisonVars varSelector">
+      </select>
+
+      <select class="comparisonVars state3" id="typeSelector">
+        <option value="company" selected>By Company</option>
+        <option value="industry">By Industry</option>
+      </select>
+
+      <div class="search-container hide-industry">
+        <input id="comparisonSearch" type="text" name="selector1" placeholder="Search">
+        <button type="submit" id="comparisonButton" class=" comparisonButtonSearch"></button>
+      </div>
+    
+      <select id="industrySelector" class="varSelector state3">
+        <option value="" selected disabled>Select Industry</option>
+        <option value="airlines">Airlines</option>
+        <option value="banking">Banking</option>
+        <option value="healthcare">Healthcare</option>
+        <option value="retailers">Retailers</option>
+      </select>
+    </form>
+    <div id="comparisonSearchField">
+    </div>
+
+  </div>
+
+  <!-- Selected Apps -->
+  <div id="selectedApps" class="state2">
+    <h3 id="comparisonMenuTitle2">Selected Apps<span id="clearAll">Clear All</span></h3>
+    <div id="sortableMainHolder">
+      <div id="selectedItems">
+        <div id="comparison">
+          <div class="comparedAppItem itemInactive"><div class="itemDrag"></div><div class="comparedAppName">Empty</div></div>
+          <div class="comparedAppItem itemInactive"><div class="itemDrag"></div><div class="comparedAppName">Empty</div></div>
+          <div class="comparedAppItem itemInactive"><div class="itemDrag"></div><div class="comparedAppName">Empty</div></div>
+          <div class="comparedAppItem itemInactive"><div class="itemDrag"></div><div class="comparedAppName">Empty</div></div>
+          <div class="comparedAppItem itemInactive"><div class="itemDrag"></div><div class="comparedAppName">Empty</div></div>
+          <div class="comparedAppItem itemInactive"><div class="itemDrag"></div><div class="comparedAppName">Empty</div></div>
+        </div>
+      </div>
+    </div>
+    <button id="generateComparison" class="inactive">COMPARE</button>
+  </div>
+</div>
